@@ -1,0 +1,29 @@
+:root{
+    --color-blue:hsl(246, 80%, 60%);
+    --color-blue--dark:hsl(235, 46%, 20%);
+    --color-blue--desaturated:hsl(235, 45%, 61%);
+    --color-blue--pale:hsl(236, 100%, 87%);
+    --color-blue--veryDark:hsl(226, 43%, 10%);
+    --color-red--light_work:hsl(15, 100%, 70%);
+    --color-blue--soft_play:hsl(195, 74%, 62%);
+    --color-red--light_study:hsl(348, 100%, 68%);
+    --color-green--lime_exercise:hsl(145, 58%, 55%);
+    --color-violet_social:hsl(264, 64%, 52%);
+    --color-orange--soft_selfCare:hsl(43, 84%, 65%);
+    --font-family:'Rubik', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: var(--color-blue--veryDark);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    border:1px solid red;
+}
