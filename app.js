@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 const fragment = document.createDocumentFragment();
 const template_card = document.getElementById("card").content;
 const dashboard_cards = document.querySelector(".dashboard_cards");
-const filtro = document.getElementById("filtros");
+const options = document.getElementById("filtros");
 let bd;
 const getData = async () => {
   try {
@@ -16,41 +16,30 @@ const getData = async () => {
     console.log(error);
   }
 };
-
+const getTypeFilter ={
+  "weekly" : "Week",
+  "daily" : "Day",
+  "monthly":"Month"
+}
 const printData = (filter = "weekly") => {
   dashboard_cards.innerHTML = ``;
   Object.values(bd).forEach((element) => {
-    template_card.querySelector(".card").classList = `card card--${element[
-      "title"
-    ]
-      .toLocaleLowerCase()
-      .replace(" ", "-")}`;
-    template_card.querySelector(
-      ".card_icon img"
-    ).src = `./images/icon-${element["title"]
-      .toLocaleLowerCase()
-      .replace(" ", "-")}.svg`;
+    const titleNormalice = element["title"].toLocaleLowerCase().replace(" ", "-");
+    const currentTime = element["timeframes"][filter]["current"];
+    const previousTime = element["timeframes"][filter]["previous"];
+    template_card.querySelector(".card").classList = `card card--${titleNormalice}`;
+    template_card.querySelector(".card_icon img").src = `./images/icon-${titleNormalice}.svg`;
     template_card.querySelector(".card_info-title").innerText = element.title;
-    template_card.querySelector(
-      ".hours"
-    ).innerText = `${element["timeframes"][filter]["current"]}hrs`;
-    template_card.querySelector(
-      ".time"
-    ).innerText = `${element["timeframes"][filter]["previous"]}hrs`;
-    if (filter === "weekly") {
-      template_card.querySelector(".type").innerText = "Week";
-    } else if (filter === "daily") {
-      template_card.querySelector(".type").innerText = "Day";
-    } else {
-      template_card.querySelector(".type").innerText = "Month";
-    }
+    template_card.querySelector(".hours").innerText = `${currentTime}hrs`;
+    template_card.querySelector(".time").innerText = `${previousTime}hrs`;
+    template_card.querySelector(".type").innerText = getTypeFilter[filter];
     const clone = template_card.cloneNode(true);
     fragment.appendChild(clone);
   });
   dashboard_cards.appendChild(fragment);
 };
 
-filtro.addEventListener("input", () => {
-  const filtro = document.querySelector("[type='radio']:checked").value;
-  printData(filtro);
+options.addEventListener("input", () => {
+  const option = document.querySelector("[type='radio']:checked").value;
+  printData(option);
 });

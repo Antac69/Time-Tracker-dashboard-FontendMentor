@@ -119,6 +119,11 @@ body {
     padding: 2rem;
     position: relative;
     z-index: 1;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    &:hover{
+      background: var(--color-blue--desaturated);
+    }
     header{
       display: flex;
       justify-content: space-between;
@@ -171,7 +176,7 @@ body {
   padding-top: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   body{
     display: flex;
     justify-content: center;
