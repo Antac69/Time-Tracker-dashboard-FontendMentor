@@ -30,6 +30,7 @@ body {
   height: max-content;
 }
 
+/* container to the dashboard */
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,6 +145,7 @@ body {
   row-gap: 1.5rem;
 }
 
+/* add styles to card */
 .card {
   --color-prin:var(--color-red--light_work);
   --color-sec:var(--color-blue--dark);
@@ -222,6 +224,7 @@ body {
   color: var(--color-blue--pale);
 }
 
+/* change the color using varCss and BEM  */
 .card--work {
   --color-prin:var(--color-red--light_work);
 }
@@ -250,6 +253,7 @@ body {
   padding-top: 1rem;
 }
 
+/* add the media query */
 @media screen and (min-width: 1024px) {
   body {
     display: -webkit-box;
