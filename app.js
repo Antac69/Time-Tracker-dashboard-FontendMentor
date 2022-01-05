@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
 const fragment = document.createDocumentFragment();
 const template_card = document.getElementById('card').content;
 const dashboard_cards = document.querySelector('.dashboard_cards');
-const filtro = document.querySelector('.dashboard_header_controls');
+const filtro = document.getElementById('filtros');
 let bd;
 const getData = async()=>{
     try{
@@ -17,9 +17,9 @@ const getData = async()=>{
     }
 }
 
-const printData = (object = bd,filter = 'weekly')=>{
+const printData = (filter = 'weekly')=>{
     dashboard_cards.innerHTML=``;
-    Object.values(object).forEach(element => {
+    Object.values(bd).forEach(element => {
         template_card.querySelector('.card').classList =`card card--${element['title'].toLocaleLowerCase().replace(' ', '-')}`
         template_card.querySelector('.card_icon img').src = `./images/icon-${element['title'].toLocaleLowerCase().replace(' ', '-')}.svg`;
         template_card.querySelector('.card_info-title').innerText = element.title;
@@ -39,4 +39,8 @@ const printData = (object = bd,filter = 'weekly')=>{
     dashboard_cards.appendChild(fragment);
 }
 
-filtro.addEventListener('input',(e)=>)
+filtro.addEventListener('input',()=>{
+    const filtro = document.querySelector("[type='radio']:checked").value
+    printData(filtro)
+} 
+)
