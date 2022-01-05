@@ -312,9 +312,10 @@ body {
     -webkit-box-align: start !important;
         -ms-flex-align: start !important;
             align-items: flex-start !important;
+    margin-top: 1.5rem !important;
   }
   .card_info-more .hours {
-    font-size: 4em !important;
+    font-size: 3em !important;
   }
   .dashboard_header_perfil-name {
     font-size: 2.5em !important;
