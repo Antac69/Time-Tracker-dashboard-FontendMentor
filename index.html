@@ -21,53 +21,61 @@
   <main class="container">
     <article class="dashboard">
       <header class="dashboard_header">
-        <article class="dashboard_header_perfil">
-          <section class="dashboard_header_perfil-image">
+        <header class="dashboard_header_perfil">
+          <figure class="dashboard_header_perfil-image">
             <img src="./images/image-jeremy.png" alt="perfil image">
-          </section>
+          </figure>
           <div class="right">
             <p class="dashboard_header_perfil-title">
               Report for
             </p>
-            <section class="dashboard_header_perfil-name">
+            <h1 class="dashboard_header_perfil-name">
               Jeremy Robson
-            </section>
+            </h1>
           </div>
-        </article>
-        <section class="dashboard_header_controls">
+        </header>
+        <footer class="dashboard_header_controls">
           <input type="radio" name="view" id="daily">
           <label for="daily">Daily</label>
           <input type="radio" name="view" id="weekly" checked>
           <label for="weekly">Weekly</label>
           <input type="radio" name="view" id="monthly">
           <label for="monthly">Monthly</label>
-        </section>
+        </footer>
       </header>
-      <section class="dashborad_cards">
-        <article class="card">
-          <div class="card_icon"></div>
-          <section class="card_info">
-            <p class="card_info-title">
-              Work
-            </p>
-            <button class="card_info-btn_opt">
-            </button>
-            <div class="card_info-more">
-              <p class="hours">
-                32hrs
-              </p>
-              <p class="date">
-                Last <span class="type">Week</span> - <span class="time">36hrs</span>
-              </p>
-            </div>
-          </section>
-        </article>
+      <section class="dashboard_cards">
       </section>
     </article>
   </main>
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a target="_blank" href="https://www.instagram.com/antac69/">@Antac69</a>.
+  </footer>
+  <template id="card">
+    <article class="card">
+      <figure class="card_icon">
+        <img src="./images/icon-work.svg" alt="">
+      </figure>
+      <section class="card_info">
+        <header>
+          <h1 class="card_info-title">
+            Work
+          </h1>
+          <button class="card_info-btn_opt">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+          </button>
+        </header>
+        <footer class="card_info-more">
+          <p class="hours">
+            32hrs
+          </p>
+          <p class="date">
+            Last <span class="type">Week</span> - <span class="time">36hrs</span>
+          </p>
+        </footer>
+      </section>
+    </article>
+  </template>
+  <script src="./app.js"></script>
 </body>
 </html>
