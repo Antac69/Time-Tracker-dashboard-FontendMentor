@@ -109,6 +109,7 @@ body {
 
 .dashboard .dashboard_header .dashboard_header_perfil .right .dashboard_header_perfil-name {
   font-weight: 300;
+  font-size: 1.5em;
 }
 
 .dashboard .dashboard_header .dashboard_header_controls {
@@ -243,23 +244,69 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .dashboard {
-    -ms-grid-columns: min-content 1fr;
-        grid-template-columns: -webkit-min-content 1fr;
-        grid-template-columns: min-content 1fr;
+    -ms-grid-columns: 250px max-content;
+        grid-template-columns: 250px -webkit-max-content;
+        grid-template-columns: 250px max-content;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
     row-gap: 0;
     -webkit-column-gap: 1.5rem;
             column-gap: 1.5rem;
   }
+  .dashboard_header_perfil {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  .dashboard_header_controls {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .dashboard_cards {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (250px)[3];
+        grid-template-columns: repeat(3, 250px);
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
   }
   .dashboard_header .dashboard_header_perfil {
     padding: 2rem !important;
+    height: 70%;
+  }
+  .dashboard_header .dashboard_header_controls {
+    height: 30%;
+  }
+  .card_info-more {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
+  .card_info-more .hours {
+    font-size: 4em !important;
+  }
+  .dashboard_header_perfil-name {
+    font-size: 2.5em !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

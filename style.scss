@@ -71,6 +71,7 @@ body {
         }
         .dashboard_header_perfil-name {
           font-weight: 300;
+          font-size: 1.5em;
         }
       }
     }
@@ -171,20 +172,47 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .dashboard{
-    grid-template-columns: min-content 1fr;
+    grid-template-columns:  250px max-content;
+    justify-content: center;
+    width: 100%;
     row-gap: 0;
     column-gap: 1.5rem;
   }
+  .dashboard_header_perfil{
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2,1fr);
+  }
+  .dashboard_header_controls{
+    flex-direction: column;
+  }
   .dashboard_cards{
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,250px);
     grid-template-rows: repeat(2,1fr);
     gap: 1.5rem;
   }
   .dashboard_header {
   .dashboard_header_perfil{
     padding: 2rem !important;
+    height: 70%;
+  }
+  .dashboard_header_controls{
+    height: 30%;
   }
 }
-
+.card_info-more{
+  flex-direction: column;
+  align-items: flex-start !important;
+  .hours{
+    font-size: 4em !important;
+  }
+}
+.dashboard_header_perfil-name{
+  font-size: 2.5em !important;
+}
 }
